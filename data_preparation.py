@@ -7,7 +7,7 @@ import os
 wd = '/path/to/wd'
 
 # specify path to csv file with demographic and imaging information
-pth = os.path.join(wd, '
+pth = os.path.join(wd, '')
 
 origdata = pd.read_csv(pth)
 
