@@ -4,6 +4,15 @@ import numpy as np
 import os
 import scipy.io as sio
 
+# count number of vertices in each yeo network (needed to sort later)
+unique, counts = np.unique(yeo, return_counts=True)
+addup = [0]
+sum = 0
+for i, count in enumerate(counts):
+    addup.append(count+sum)
+    sum +=count
+print(addup)
+
 def organizeyeo(inmat):
     yeo = sio.loadmat('/yeo_fsaverage5.mat')
     yeo = yeo['yeo']
