@@ -84,6 +84,8 @@ def create_zscoretable(inmatrix, name):
 
         zscores_controls = zscores_controls.append(pd.DataFrame([line_z_controls], columns = columns_con))
         means_controls = means_controls.append(pd.DataFrame([line_m_controls], columns = columns_con))
+    
+    #save outcomes
     pth = '/Users/root'
     opth_zscores = os.path.join(pth, f'{name}_zscores_asd2control.csv')
     opth_means = os.path.join(pth, f'{name}_means_asd.csv')
@@ -98,3 +100,13 @@ def create_zscoretable(inmatrix, name):
     print('Saving zscores for Controls with length', len(zscores_controls), 'to ', opth_zscores_controls)
     means_controls.to_csv(opth_means_controls)
     print('Saving means for Controls with length', len(means_controls), 'to ', opth_means_controls)
+    
+    
+# call function - in this case for the metrices connectivity distance and functional connectivity
+funcdist = np.load('funcdist_means.npz') # size = casenumbers x 20484 vertices in fsaverage5
+funcdist = funcdist['funcdist']
+create_zscoretable(funcdist, 'condist')
+
+funconnect = np.load('funconnect_means.npz') # size = casenumbers x 20484 vertices in fsaverage5
+funconnect= funconnect['fc']
+create_zscoretable(funconnect, 'fc')
