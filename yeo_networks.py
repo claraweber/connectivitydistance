@@ -22,7 +22,7 @@ def organizeyeo(inmat):
     new = np.empty(shape=(len(inmat),len(inmat)))
     count = 0 
     for i in range(9):
-        print(i//9,'% done')
+        print(i,'/8 done')
         for j in range(len(yeo)):
             if yeo[j]==i:
                 newline = []
