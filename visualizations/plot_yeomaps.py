@@ -39,15 +39,14 @@ cmaps_van = build_cmaps(0.76862745, 0.22745098, 0.98039216)
 cmaps_limbic = build_cmaps(0.8627451,  0.97254902, 0.64313725)
 cmaps_fpn = build_cmaps(0.90196078, 0.58039216, 0.13333333)
 cmaps_dmn = build_cmaps(0.80392157, 0.24313725, 0.30588235)
-cmaps_yeo = [cmaps_visual, cmaps_smn, cmaps_dan, cmaps_van, cmaps_limbic, cmaps_fpn, cmaps_dmn]
+cmaps_yeo = [cmaps_dan, cmaps_fpn, cmaps_dmn, cmaps_visual, cmaps_limbic, cmaps_smn, cmaps_van]
 
 # plot with brainstats
 plot_hemispheres(
     pial_left,
     pial_right,
     yeoset,
-    color_bar = True,
-    label_text=['Visual', 'SMN', 'DAN', 'VAN', 'Limbic', 'FPN', 'DMN'],
+    label_text=['DAN', 'FPN', 'DMN', 'Visual', 'Limbic', 'SMN', 'VAN'],
     cmap = cmaps_yeo,
     embed_nb=True,
     size=(1400,1400),
