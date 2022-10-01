@@ -56,7 +56,6 @@ def create_zscoretable(inmatrix, name):
     
     for vertex in range(20484):
         line_z = [] 
-        line_m = []
         line_z_controls = []
         line_m_controls = []
         mean_con_vrtx = mean_con[vertex]
