@@ -34,5 +34,5 @@ for (network in 2:8){
 
 
 # correct pvalues using FDR
-p_adj <- p.adjust(df_statistics$p, method = "fdr", n = 7)
+p_adj <- p.adjust(df_statistics$p, method = "fdr")
 df_statistics$p_adj <- p_adj
