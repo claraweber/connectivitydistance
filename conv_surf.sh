@@ -9,9 +9,12 @@ subj=$1
 mkdir temp_$subj
 cd temp_$subj
 
-pth_orig='/local_raid/abide1/07_geodist/'$subj
-pth_func='/local_raid/abide1/01_fs_processed/'$subj'/surf'
-pth_new='/data/mica3/ABIDE/Outputs/geodist/fs_LR_10k'
+#original surface
+pth_orig='/'$subj
+# surface in fsa5
+pth_func='/'$subj'/'
+# new path
+pth_new='/'
 
 
 # define resampling function
@@ -82,11 +85,11 @@ calculate_newdist() {
 }
 
 conv_surf1 $subj 'left'
-#conv_surf2 $subj 'left'
-#calculate_newdist $subj 'left'
+conv_surf2 $subj 'left'
+calculate_newdist $subj 'left'
 conv_surf1 $subj 'right'
-#conv_surf2 $subj 'right'
-#calculate_newdist $subj 'right'
+conv_surf2 $subj 'right'
+calculate_newdist $subj 'right'
 
 cd ..
 
