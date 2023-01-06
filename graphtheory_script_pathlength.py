@@ -14,7 +14,7 @@ def do_graphtheory_things_pathlength(case, v=False):
 
 	"""
 	# load surface 
-	s10 = '/data/mica1/03_projects/clara/conte_10k_fixed.vtp'
+	s10 = 'conte_10k_fixed.vtp'
 	pial_left, pial_right  = load_conte69()
 	s10 = read_surface(s10)
 	mask = s10.PointData['mask'] == 1
@@ -32,7 +32,7 @@ def do_graphtheory_things_pathlength(case, v=False):
 	    s10_rh.append_array(x[half:], name=array_name, at='p')
 
 	# load case 
-	mat = np.load(f'/data/mica2/ABIDE/Outputs/RSFC/Conte69_10k/{case}_fc_10k_sm6.npz')['Z']
+	mat = np.load(f'{case}_fc_10k.npz')['Z']
 
 	# Parcellate to Schaefer 200
 	parc = s10.PointData['schaefer200_yeo7']
@@ -96,7 +96,7 @@ def do_graphtheory_things_pathlength(case, v=False):
 
 #------
 # load case names
-origdata = pd.read_csv('/data/mica1/03_projects/clara/abide_func_fn_abideI.csv')
+origdata = pd.read_csv('demodata.csv')
 filter_quality = origdata['Func_MeanFD'] <=0.3
 origdata = origdata[filter_quality]
 
