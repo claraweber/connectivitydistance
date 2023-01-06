@@ -31,7 +31,7 @@ def gretnapy_node_clustcoeff_weight(W, a = 'barrat'):
     avercc = average clustering coefficient of all nodes in the graph G
     cci = clustering coefficiency of each node in the graph G
     
-    Clara, 2022
+    2022
     """
     
     if a == 'barrat':
@@ -62,7 +62,7 @@ def gretnapy_gen_random_network1_weight(W):
     by Yong He and Jinhui Wang 2007/2011, Jinhui/Wang.1982@gmail.com
     Based on Maslov et al. 2022 / generationg a random network wirh same N K and degree
     distribution as a real weighted network H using Maslovs wiring algorithm
-    Clara - 2022
+    2022
     
     Input:
     W: adjacency matrix (N*N symmetric)
